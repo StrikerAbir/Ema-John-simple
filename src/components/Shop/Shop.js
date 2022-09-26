@@ -14,21 +14,21 @@ const Shop = () => {
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
-                console.log('fetch finished');
+                // console.log('fetch finished');
             });
 
     }, [])
 
     useEffect(() => { 
-        console.log('local storage');
+        // console.log('local storage');
         const storedCart = getStoredCart();
-        console.log(storedCart);
+        // console.log(storedCart);
         const savedCart = [];
         for (const id in storedCart) {
             const addedProduct = products.find(product => product.id === id)
             console.log('storage finished');
             if (addedProduct) {
-                console.log(addedProduct);
+                // console.log(addedProduct);
                 const quantity = storedCart[id];
                 addedProduct.quantity = quantity;
                 savedCart.push(addedProduct);
